@@ -19,7 +19,7 @@ Taskboard is a single-page to-do app. It runs entirely in the browser with no ba
 ```
 /
 ├── AGENTS.md        # this file
-└── taskboard.html   # entire app: HTML, CSS and JavaScript in one file
+└── index.html   # entire app: HTML, CSS and JavaScript in one file
 ```
 
 Do not split the app into multiple files, add a framework, or add a build tool unless the user explicitly asks.
@@ -27,7 +27,7 @@ Do not split the app into multiple files, add a framework, or add a build tool u
 ## How to run
 
 1. Open `taskboard.html` directly in a browser, or
-2. Serve the folder locally: `python3 -m http.server 8000`, then visit `http://localhost:8000/taskboard.html`
+2. Serve the folder locally: `python3 -m http.server 8000`, then visit `http://localhost:8000/index.html`
 
 ## Coding rules
 
@@ -44,7 +44,7 @@ Do not split the app into multiple files, add a framework, or add a build tool u
 
 ## Data model and storage
 
-Tasks are saved in `localStorage` under the key `taskboard.v1` as a JSON array:
+Tasks are saved in `localStorage` under the key `index.v1` as a JSON array:
 
 ```json
 {
@@ -63,7 +63,7 @@ Tasks are saved in `localStorage` under the key `taskboard.v1` as a JSON array:
 Rules:
 - Never rename or remove existing fields without a migration. Old saved data and old backup files must keep loading.
 - Adding a field is fine, but it needs a safe default when missing.
-- If the shape changes in a breaking way, bump the storage key (for example `taskboard.v2`) and migrate from the old key.
+- If the shape changes in a breaking way, bump the storage key (for example `index.v2`) and migrate from the old key.
 
 ## Recurring task behaviour
 
